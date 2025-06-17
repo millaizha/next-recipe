@@ -1,0 +1,974 @@
+[
+  {
+    "id": "pasta-001",
+    "name": "Spaghetti Carbonara",
+    "ingredients": [
+      "200g spaghetti",
+      "100g pancetta",
+      "2 large eggs",
+      "50g grated Parmesan",
+      "2 cloves garlic",
+      "Salt and pepper",
+      "1 tbsp olive oil"
+    ],
+    "instructions": [
+      "Boil the spaghetti in salted water until al dente.",
+      "Fry pancetta with garlic in olive oil until crispy. Remove garlic afterward.",
+      "Beat eggs and mix with Parmesan, salt, and pepper.",
+      "Drain pasta and mix with pancetta.",
+      "Remove from heat and quickly stir in egg mixture until creamy.",
+      "Serve immediately with extra Parmesan."
+    ],
+    "cookingTime": "20 minutes",
+    "servings": 2,
+    "image": "https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-mediumSquareAt3X-v2.jpg"
+  },
+  {
+    "id": "pasta-002",
+    "name": "Creamy Pesto Penne",
+    "ingredients": [
+      "250g penne pasta",
+      "100g basil pesto",
+      "150ml heavy cream",
+      "1 tbsp olive oil",
+      "Salt and pepper",
+      "Parmesan for garnish"
+    ],
+    "instructions": [
+      "Cook penne pasta in salted water until al dente.",
+      "In a pan, mix pesto and cream, simmer for 2–3 minutes.",
+      "Add cooked pasta and toss until coated.",
+      "Season with salt and pepper.",
+      "Garnish with Parmesan before serving."
+    ],
+    "cookingTime": "25 minutes",
+    "servings": 3,
+    "image": "https://mortadellahead.com/wp-content/uploads/2023/01/cpk-pesto-cream-penne-pasta-recipe-jpg.webp"
+  },
+  {
+    "id": "pasta-003",
+    "name": "Baked Mac and Cheese",
+    "ingredients": [
+      "200g elbow macaroni",
+      "2 cups shredded cheddar cheese",
+      "2 tbsp flour",
+      "2 tbsp butter",
+      "2 cups milk",
+      "Salt and pepper",
+      "Breadcrumbs for topping"
+    ],
+    "instructions": [
+      "Preheat oven to 180°C (350°F).",
+      "Cook macaroni until al dente and drain.",
+      "Make a roux with butter and flour, then whisk in milk until thickened.",
+      "Stir in cheese until melted and smooth.",
+      "Combine with pasta, pour into a baking dish.",
+      "Top with breadcrumbs and bake for 20 minutes."
+    ],
+    "cookingTime": "40 minutes",
+    "servings": 4,
+    "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2020/10/14/0/FNK_SOUTHERN_STYLE_MAC_N_CHEESE_H_f_s4x3.jpg.rend.hgtvcom.1280.960.suffix/1602697013202.webp"
+  },
+  {
+    "id": "pasta-004",
+    "name": "Garlic Shrimp Fettuccine",
+    "ingredients": [
+      "250g fettuccine",
+      "200g shrimp (peeled and deveined)",
+      "4 cloves garlic",
+      "3 tbsp olive oil",
+      "Juice of 1 lemon",
+      "Parsley, chopped",
+      "Salt and pepper"
+    ],
+    "instructions": [
+      "Cook fettuccine according to package instructions.",
+      "Sauté garlic in olive oil until fragrant.",
+      "Add shrimp, season with salt and pepper, and cook until pink.",
+      "Mix in lemon juice and parsley.",
+      "Toss with cooked pasta and serve."
+    ],
+    "cookingTime": "30 minutes",
+    "servings": 2,
+    "image": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/288049.jpg"
+  },
+  {
+    "id": "pasta-005",
+    "name": "Lasagna",
+    "ingredients": [
+      "9 lasagna noodles",
+      "500g ground beef",
+      "1 onion, chopped",
+      "2 cups tomato sauce",
+      "1 cup ricotta cheese",
+      "2 cups mozzarella cheese",
+      "1/2 cup grated Parmesan",
+      "Salt, pepper, and Italian seasoning"
+    ],
+    "instructions": [
+      "Preheat oven to 190°C (375°F).",
+      "Cook noodles and set aside.",
+      "Sauté onion and beef until browned, add tomato sauce and seasoning.",
+      "Layer noodles, meat sauce, ricotta, and mozzarella in a baking dish.",
+      "Repeat layers and top with Parmesan.",
+      "Bake for 40 minutes, let rest before serving."
+    ],
+    "cookingTime": "1 hour",
+    "servings": 6,
+    "image": "https://thecozycook.com/wp-content/uploads/2022/04/Lasagna-Recipe-F5.jpg"
+  },
+  {
+    "id": "ramen-001",
+    "name": "Shoyu Ramen",
+    "ingredients": [
+      "2 packs ramen noodles",
+      "4 cups chicken broth",
+      "2 tbsp soy sauce",
+      "1 tsp sesame oil",
+      "1 boiled egg",
+      "1 sheet nori",
+      "Green onions, chopped",
+      "Cooked chicken or pork slices"
+    ],
+    "instructions": [
+      "Boil broth and add soy sauce and sesame oil.",
+      "Cook ramen noodles and drain.",
+      "Place noodles in a bowl, pour over broth.",
+      "Top with boiled egg, nori, meat, and green onions."
+    ],
+    "cookingTime": "20 minutes",
+    "servings": 2,
+    "image": "https://www.umami.recipes/api/image/recipes/vnnWaa8rpkZB0RuszoIK/images/PNYdXgtFFEh9es1oYh7KZG?w=3840&q=75"
+  },
+  {
+    "id": "ramen-002",
+    "name": "Miso Ramen",
+    "ingredients": [
+      "2 servings ramen noodles",
+      "4 cups dashi or chicken broth",
+      "2 tbsp miso paste",
+      "Corn kernels",
+      "Butter",
+      "Soft-boiled egg",
+      "Green onions",
+      "Bean sprouts"
+    ],
+    "instructions": [
+      "Heat broth and dissolve miso paste.",
+      "Cook ramen noodles separately.",
+      "Add noodles to bowl and pour broth over.",
+      "Top with corn, butter, egg, green onions, and sprouts."
+    ],
+    "cookingTime": "25 minutes",
+    "servings": 2,
+    "image": "https://dishingouthealth.com/wp-content/uploads/2022/01/SpicyMisoRamen_Square.jpg"
+  },
+  {
+    "id": "ramen-003",
+    "name": "Tonkotsu Ramen",
+    "ingredients": [
+      "2 servings ramen noodles",
+      "4 cups pork bone broth",
+      "Chashu pork slices",
+      "Soft-boiled egg",
+      "Green onions",
+      "Wood ear mushrooms",
+      "Bamboo shoots",
+      "Nori"
+    ],
+    "instructions": [
+      "Simmer pork bone broth for deep flavor.",
+      "Cook noodles and drain.",
+      "Place noodles in a bowl, pour in hot broth.",
+      "Add toppings: pork, egg, mushrooms, bamboo, and nori."
+    ],
+    "cookingTime": "8 hours (for broth), 10 minutes (assembly)",
+    "servings": 2,
+    "image": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2024-03-tonkotsu-ramen%2Ftonkotsu-ramen-195"
+  },
+  {
+    "id": "ramen-004",
+    "name": "Spicy Korean Ramen",
+    "ingredients": [
+      "1 pack Korean instant ramen",
+      "1 egg",
+      "Kimchi",
+      "Chopped scallions",
+      "Sesame seeds",
+      "Sliced sausage or tofu"
+    ],
+    "instructions": [
+      "Cook instant ramen according to package.",
+      "Crack an egg into the boiling soup and let it poach.",
+      "Add kimchi and protein of choice.",
+      "Serve topped with scallions and sesame seeds."
+    ],
+    "cookingTime": "10 minutes",
+    "servings": 1,
+    "image": "https://www.recipetineats.com/tachyon/2023/05/Spicy-Korean-noodle-soup_4.jpg"
+  },
+  {
+    "id": "pasta-006",
+    "name": "Tuna Aglio e Olio",
+    "ingredients": [
+      "200g spaghetti",
+      "1 can tuna in olive oil",
+      "4 cloves garlic, sliced",
+      "1/2 tsp chili flakes",
+      "Salt and pepper",
+      "Parsley"
+    ],
+    "instructions": [
+      "Cook spaghetti until al dente.",
+      "Sauté garlic and chili flakes in tuna oil.",
+      "Add tuna and heat through.",
+      "Toss pasta with tuna mixture.",
+      "Season and garnish with parsley."
+    ],
+    "cookingTime": "20 minutes",
+    "servings": 2,
+    "image": "https://familystylefood.com/wp-content/uploads/2020/07/tuna.jpg"
+  },
+  {
+    "id": "pasta-007",
+    "name": "Pasta Primavera",
+    "ingredients": [
+      "200g penne pasta",
+      "1 zucchini, chopped",
+      "1 red bell pepper, sliced",
+      "1 carrot, julienned",
+      "1/2 cup cherry tomatoes",
+      "2 cloves garlic",
+      "2 tbsp olive oil",
+      "Salt and pepper",
+      "Grated Parmesan"
+    ],
+    "instructions": [
+      "Cook pasta until al dente and drain.",
+      "Sauté garlic in olive oil, then add vegetables.",
+      "Cook until vegetables are tender-crisp.",
+      "Toss vegetables with pasta and season.",
+      "Serve with grated Parmesan."
+    ],
+    "cookingTime": "30 minutes",
+    "servings": 2,
+    "image": "https://images.themodernproper.com/production/posts/PastaPrimavera_9.jpg?w=960&h=960&q=82&fm=jpg&fit=crop&dm=1719193336&s=937ab7a995140869e824b6eac4374aa7"
+  },
+  {
+    "id": "pasta-008",
+    "name": "Cheesy Chicken Alfredo",
+    "ingredients": [
+      "250g fettuccine",
+      "2 chicken breasts, sliced",
+      "2 tbsp butter",
+      "2 cups heavy cream",
+      "1 cup grated Parmesan",
+      "2 cloves garlic",
+      "Salt and pepper",
+      "Parsley"
+    ],
+    "instructions": [
+      "Cook fettuccine and set aside.",
+      "Sauté chicken in butter until golden.",
+      "Add garlic and cook for 1 minute.",
+      "Pour in cream and simmer, then add cheese.",
+      "Combine with pasta and garnish with parsley."
+    ],
+    "cookingTime": "35 minutes",
+    "servings": 3,
+    "image": "https://cdn.apartmenttherapy.info/image/upload/v1687538030/k/Photo/Recipes/2023-06-chicken-alfredo-pasta-reshoot/chicken-alfredo-pasta-2-vertical.jpg"
+  },
+  {
+    "id": "pasta-009",
+    "name": "Arrabbiata Penne",
+    "ingredients": [
+      "200g penne pasta",
+      "2 tbsp olive oil",
+      "3 cloves garlic",
+      "1/2 tsp chili flakes",
+      "1 can crushed tomatoes",
+      "Salt and pepper",
+      "Fresh basil"
+    ],
+    "instructions": [
+      "Cook penne until al dente.",
+      "Sauté garlic and chili flakes in oil.",
+      "Add tomatoes and simmer for 10 minutes.",
+      "Season and mix with pasta.",
+      "Garnish with fresh basil."
+    ],
+    "cookingTime": "25 minutes",
+    "servings": 2,
+    "image": "https://www.giallozafferano.com/images/260-26061/Penne-all-arrabbiata_1200x800.jpg"
+  },
+  {
+    "id": "pasta-010",
+    "name": "Beef Stroganoff Pasta",
+    "ingredients": [
+      "250g egg noodles",
+      "300g beef strips",
+      "1 onion, chopped",
+      "1 cup mushrooms",
+      "1 tbsp flour",
+      "1 cup beef broth",
+      "1/2 cup sour cream",
+      "Salt and pepper",
+      "Parsley"
+    ],
+    "instructions": [
+      "Cook egg noodles and set aside.",
+      "Sauté beef and set aside.",
+      "Cook onions and mushrooms until soft.",
+      "Add flour and beef broth, then stir in sour cream.",
+      "Return beef and mix with noodles.",
+      "Garnish with parsley."
+    ],
+    "cookingTime": "40 minutes",
+    "servings": 4,
+    "image": "https://www.allrecipes.com/thmb/mSWde3PHTu-fDkbvWBw0D1JlS8U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/25202beef-stroganoff-iii-ddmfs-3x4-233-0f26fa477e9c446b970a32502468efc6.jpg"
+  },
+  {
+    "id": "ramen-005",
+    "name": "Cold Sesame Ramen",
+    "ingredients": [
+      "2 servings ramen noodles",
+      "2 tbsp sesame paste or tahini",
+      "1 tbsp soy sauce",
+      "1 tbsp rice vinegar",
+      "1 tsp sugar",
+      "1 tsp sesame oil",
+      "Cucumber slices",
+      "Shredded carrot"
+    ],
+    "instructions": [
+      "Cook noodles, rinse under cold water.",
+      "Whisk sesame paste, soy sauce, vinegar, sugar, and oil.",
+      "Toss with noodles.",
+      "Top with cucumber and carrots."
+    ],
+    "cookingTime": "20 minutes",
+    "servings": 2,
+    "image": "https://cjeatsrecipes.com/wp-content/uploads/2022/08/Cold-Sesame-Noodles-Plated-scaled.jpg"
+  },
+  {
+    "id": "ramen-006",
+    "name": "Vegetarian Ramen",
+    "ingredients": [
+      "2 servings ramen noodles",
+      "4 cups vegetable broth",
+      "1 tbsp miso paste",
+      "1/2 cup tofu cubes",
+      "Spinach",
+      "Corn kernels",
+      "Mushrooms",
+      "Green onions"
+    ],
+    "instructions": [
+      "Bring broth to a simmer and mix in miso paste.",
+      "Add tofu, mushrooms, and corn.",
+      "Cook noodles separately and add to broth.",
+      "Top with spinach and green onions."
+    ],
+    "cookingTime": "30 minutes",
+    "servings": 2,
+    "image": "https://cdn.loveandlemons.com/wp-content/uploads/2023/02/vegan-ramen.jpg"
+  },
+  {
+    "id": "ramen-007",
+    "name": "Curry Ramen",
+    "ingredients": [
+      "2 servings ramen noodles",
+      "2 tbsp Japanese curry roux or paste",
+      "4 cups chicken broth",
+      "Carrot slices",
+      "Potato cubes",
+      "Boiled egg",
+      "Green onions"
+    ],
+    "instructions": [
+      "Simmer broth and dissolve curry paste.",
+      "Add carrots and potatoes until tender.",
+      "Cook ramen separately and add to curry soup.",
+      "Top with egg and green onions."
+    ],
+    "cookingTime": "35 minutes",
+    "servings": 2,
+    "image": "https://www.justonecookbook.com/wp-content/uploads/2020/05/Curry-Ramen-9527-I.jpg"
+  },
+  {
+    "id": "ramen-008",
+    "name": "Instant Ramen Upgrade",
+    "ingredients": [
+      "1 pack instant ramen",
+      "1 egg",
+      "Frozen vegetables",
+      "Sriracha",
+      "Soy sauce",
+      "Sesame seeds"
+    ],
+    "instructions": [
+      "Cook instant noodles with seasoning.",
+      "Add frozen vegetables and egg during final minute.",
+      "Drizzle with soy sauce and sriracha.",
+      "Top with sesame seeds before serving."
+    ],
+    "cookingTime": "10 minutes",
+    "servings": 1,
+    "image": "https://www.budgetbytes.com/wp-content/uploads/2019/04/6-Ways-to-Upgrade-Instant-Ramen-eating-1200.jpg"
+  },
+  {
+    "id": "ramen-009",
+    "name": "Seafood Ramen",
+    "ingredients": [
+      "2 servings ramen noodles",
+      "4 cups seafood or chicken broth",
+      "Shrimp",
+      "Squid rings",
+      "Mussels",
+      "Bok choy",
+      "Garlic and ginger"
+    ],
+    "instructions": [
+      "Simmer broth with garlic and ginger.",
+      "Add seafood and cook until done.",
+      "Cook noodles and add to soup.",
+      "Add bok choy just before serving."
+    ],
+    "cookingTime": "30 minutes",
+    "servings": 2,
+    "image": "https://data.thefeedfeed.com/static/2020/06/11/15918884045ee24a140c006.jpg"
+  },
+  {
+    "id": "pasta-011",
+    "name": "Mushroom Truffle Tagliatelle",
+    "ingredients": [
+      "250g tagliatelle",
+      "200g mixed mushrooms",
+      "2 tbsp truffle oil",
+      "1 tbsp butter",
+      "1/2 cup cream",
+      "Salt and pepper",
+      "Parmesan cheese"
+    ],
+    "instructions": [
+      "Cook tagliatelle and set aside.",
+      "Sauté mushrooms in butter until golden.",
+      "Add cream, salt, and pepper, then stir in truffle oil.",
+      "Toss with pasta and top with Parmesan."
+    ],
+    "cookingTime": "30 minutes",
+    "servings": 2,
+    "image": "https://vikalinka.com/wp-content/uploads/2021/02/Truffle-Oil-Pasta-1.jpg"
+  },
+  {
+    "id": "pasta-017",
+    "name": "Tuna Pesto Pasta",
+    "ingredients": [
+      "200g fusilli pasta",
+      "1 can tuna in oil",
+      "1/4 cup pesto sauce",
+      "Cherry tomatoes",
+      "Salt and pepper"
+    ],
+    "instructions": [
+      "Cook fusilli and drain.",
+      "Mix pasta with tuna and pesto.",
+      "Add halved cherry tomatoes.",
+      "Season and serve."
+    ],
+    "cookingTime": "20 minutes",
+    "servings": 2,
+    "image": "https://www.mrsjoneskitchen.com/wp-content/uploads/2022/02/Tuna-pesto-pasta.jpg"
+  },
+  {
+    "id": "pasta-018",
+    "name": "Garlic Shrimp Spaghetti",
+    "ingredients": [
+      "200g spaghetti",
+      "200g shrimp, peeled",
+      "4 cloves garlic",
+      "2 tbsp olive oil",
+      "Chili flakes",
+      "Parsley"
+    ],
+    "instructions": [
+      "Cook spaghetti and set aside.",
+      "Sauté garlic and chili flakes in oil.",
+      "Add shrimp and cook until pink.",
+      "Toss with spaghetti and parsley."
+    ],
+    "cookingTime": "25 minutes",
+    "servings": 2,
+    "image": "https://www.cookerru.com/wp-content/uploads/2022/03/garlic-shrimp-pasta-recipe-preview.jpg"
+  },
+  {
+    "id": "pasta-019",
+    "name": "Creamy Spinach Pasta",
+    "ingredients": [
+      "200g penne",
+      "2 cups fresh spinach",
+      "1/2 cup cream",
+      "2 tbsp cream cheese",
+      "1 tbsp olive oil",
+      "Salt and pepper"
+    ],
+    "instructions": [
+      "Cook penne and set aside.",
+      "Sauté spinach in olive oil until wilted.",
+      "Add cream and cream cheese until combined.",
+      "Mix in pasta and season to taste."
+    ],
+    "cookingTime": "20 minutes",
+    "servings": 2,
+    "image": "https://www.karissasvegankitchen.com/wp-content/uploads/2019/08/one-pot-creamy-spinach-pasta-7c-480x270.jpg"
+  },
+  {
+    "id": "pasta-020",
+    "name": "Sundried Tomato Pasta",
+    "ingredients": [
+      "200g bowtie pasta",
+      "1/2 cup sundried tomatoes",
+      "1/4 cup olives",
+      "2 cloves garlic",
+      "1 tbsp olive oil",
+      "Parmesan"
+    ],
+    "instructions": [
+      "Cook bowtie pasta and set aside.",
+      "Sauté garlic in oil, add sundried tomatoes and olives.",
+      "Mix in pasta and sprinkle with Parmesan."
+    ],
+    "cookingTime": "20 minutes",
+    "servings": 2,
+    "image": "https://www.gimmesomeoven.com/wp-content/uploads/2023/04/One-Pot-Sundried-Tomato-Pasta-8.jpg"
+  },
+  {
+    "id": "pasta-021",
+    "name": "Carbonara (No Cream)",
+    "ingredients": [
+      "200g spaghetti",
+      "2 eggs",
+      "100g pancetta",
+      "1/2 cup grated Parmesan",
+      "Salt and black pepper"
+    ],
+    "instructions": [
+      "Cook spaghetti and reserve some pasta water.",
+      "Cook pancetta until crispy.",
+      "Mix eggs and cheese in a bowl.",
+      "Quickly mix hot pasta with egg mixture and pancetta.",
+      "Add pasta water to make creamy."
+    ],
+    "cookingTime": "20 minutes",
+    "servings": 2,
+    "image": "https://assets.unileversolutions.com/v1/93553951.jpg"
+  },
+  {
+    "id": "pasta-022",
+    "name": "Baked Ziti",
+    "ingredients": [
+      "300g ziti pasta",
+      "1 cup marinara sauce",
+      "1/2 cup ricotta",
+      "1/2 cup mozzarella",
+      "1/4 cup Parmesan"
+    ],
+    "instructions": [
+      "Boil ziti and mix with marinara sauce and ricotta.",
+      "Transfer to baking dish, top with mozzarella and Parmesan.",
+      "Bake at 180°C for 20 minutes."
+    ],
+    "cookingTime": "35 minutes",
+    "servings": 4,
+    "image": "https://www.budgetbytes.com/wp-content/uploads/2019/10/Baked-Ziti-mixed-scoop-1200.jpg"
+  },
+  {
+    "id": "pasta-023",
+    "name": "Mac and Cheese",
+    "ingredients": [
+      "250g elbow macaroni",
+      "2 tbsp butter",
+      "2 tbsp flour",
+      "2 cups milk",
+      "2 cups cheddar cheese"
+    ],
+    "instructions": [
+      "Boil macaroni and drain.",
+      "Make a roux with butter and flour, then add milk.",
+      "Melt in cheese and mix with pasta."
+    ],
+    "cookingTime": "25 minutes",
+    "servings": 3,
+    "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F03%2F19%2F238691-Simple-Macaroni-And-Cheese-mfs_006.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90"
+  },
+  {
+    "id": "pasta-024",
+    "name": "Tom Yum Ramen",
+    "ingredients": [
+      "2 servings ramen noodles",
+      "1 tbsp tom yum paste",
+      "4 cups water",
+      "Mushrooms",
+      "Shrimp",
+      "Lime",
+      "Cilantro"
+    ],
+    "instructions": [
+      "Boil water and add tom yum paste.",
+      "Add mushrooms and shrimp, cook until done.",
+      "Boil noodles separately and add to soup.",
+      "Top with lime and cilantro."
+    ],
+    "cookingTime": "30 minutes",
+    "servings": 2,
+    "image": "https://thechutneylife.com/wp-content/uploads/2023/06/Tom-Yum-Ramen-Noodle-Soup-The-Chutney-Life-4-1024x683.jpg"
+  },
+  {
+    "id": "ramen-015",
+    "name": "Soy Butter Ramen",
+    "ingredients": [
+      "1 pack ramen",
+      "1 tbsp butter",
+      "1 tbsp soy sauce",
+      "Corn",
+      "Green onions"
+    ],
+    "instructions": [
+      "Cook ramen as usual.",
+      "Stir in butter and soy sauce.",
+      "Top with corn and green onions."
+    ],
+    "cookingTime": "10 minutes",
+    "servings": 1,
+    "image": "https://static01.nyt.com/images/2023/07/14/multimedia/14EVERYDAY-VEGETABLESrex3-hbck/14EVERYDAY-VEGETABLESrex3-hbck-mediumSquareAt3X.jpg"
+  },
+  {
+    "id": "ramen-016",
+    "name": "Breakfast Ramen",
+    "ingredients": [
+      "1 pack ramen noodles",
+      "2 slices bacon",
+      "1 egg",
+      "1/4 cup shredded cheese",
+      "Chopped green onions",
+      "Salt and pepper"
+    ],
+    "instructions": [
+      "Cook bacon until crispy, set aside.",
+      "Cook ramen and add beaten egg while stirring.",
+      "Mix in cheese until melted.",
+      "Top with crumbled bacon and green onions."
+    ],
+    "cookingTime": "15 minutes",
+    "servings": 1,
+    "image": "https://www.foodandwine.com/thmb/_2vCLsUaf8xNWByrH5YZGIW-edQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Breakfast-Ramen-FT-RECIPE0524-02-41d08d10b0154e88892d574bf42f03fa.jpeg"
+  },
+  {
+    "id": "ramen-017",
+    "name": "Gochujang Ramen",
+    "ingredients": [
+      "1 pack ramen",
+      "1 tbsp gochujang",
+      "1 tsp sesame oil",
+      "Egg",
+      "Seaweed",
+      "Scallions"
+    ],
+    "instructions": [
+      "Boil noodles and mix in gochujang and sesame oil.",
+      "Top with egg, seaweed, and scallions."
+    ],
+    "cookingTime": "15 minutes",
+    "servings": 1,
+    "image": "https://www.servingdumplings.com/wp-content/uploads/2024/01/coconut-guchujang-noodle-soup-tn-fdf0b3e8.jpg"
+  },
+  {
+    "id": "ramen-018",
+    "name": "Ramen with Peanut Sauce",
+    "ingredients": [
+      "1 pack ramen noodles",
+      "2 tbsp peanut butter",
+      "1 tbsp soy sauce",
+      "1 tsp sesame oil",
+      "Chili flakes",
+      "Cucumber"
+    ],
+    "instructions": [
+      "Boil noodles and drain.",
+      "Whisk peanut butter, soy sauce, and oil.",
+      "Mix with noodles and top with chili and cucumber."
+    ],
+    "cookingTime": "15 minutes",
+    "servings": 1,
+    "image": "https://assets.bonappetit.com/photos/60215dc0bc23c5cd3769e5ef/1:1/w_2560%2Cc_limit/Lunch-Peanut-Butter-Noodles-With-Cucumbers-2.jpg"
+  },
+  {
+    "id": "ramen-019",
+    "name": "Spicy Garlic Ramen",
+    "ingredients": [
+      "1 pack ramen",
+      "3 cloves garlic",
+      "1 tbsp chili oil",
+      "1 tsp soy sauce",
+      "Green onions"
+    ],
+    "instructions": [
+      "Fry garlic in chili oil.",
+      "Cook ramen, then toss with garlic oil and soy sauce.",
+      "Top with green onions."
+    ],
+    "cookingTime": "10 minutes",
+    "servings": 1,
+    "image": "https://watchciwork.com/wp-content/uploads/2023/05/002A6884-edited.jpg"
+  },
+  {
+    "id": "pasta-025",
+    "name": "Gnocchi with Brown Butter Sage",
+    "ingredients": [
+      "250g gnocchi",
+      "2 tbsp butter",
+      "6 sage leaves",
+      "Salt and pepper",
+      "Parmesan"
+    ],
+    "instructions": [
+      "Boil gnocchi until they float.",
+      "Brown butter in pan with sage.",
+      "Toss gnocchi in sage butter and season.",
+      "Top with Parmesan."
+    ],
+    "cookingTime": "20 minutes",
+    "servings": 2,
+    "image": "https://www.kitchensanctuary.com/wp-content/uploads/2022/03/Gnocchi-with-browned-butter-and-sage-square-FS-14.jpg"
+  },
+  {
+    "id": "ramen-020",
+    "name": "Sesame Chili Ramen",
+    "ingredients": [
+      "1 pack ramen noodles",
+      "1 tbsp chili crisp",
+      "1 tsp soy sauce",
+      "1 tsp sesame oil",
+      "Chopped green onions"
+    ],
+    "instructions": [
+      "Cook noodles and drain.",
+      "Mix with chili crisp, soy sauce, and sesame oil.",
+      "Top with green onions."
+    ],
+    "cookingTime": "10 minutes",
+    "servings": 1,
+    "image": "https://cdn.shopify.com/s/files/1/0353/5621/files/photo_large_aea62507-ac6c-418e-ae82-dc1aee837cbc_large.jpg?v=1548952658"
+  },
+  {
+    "id": "pasta-026",
+    "name": "Eggplant Parmesan Pasta",
+    "ingredients": [
+      "200g rigatoni",
+      "1 small eggplant",
+      "1 cup marinara sauce",
+      "1/4 cup mozzarella cheese",
+      "1/4 cup Parmesan",
+      "Olive oil",
+      "Salt and pepper"
+    ],
+    "instructions": [
+      "Slice and roast or pan-fry eggplant until golden.",
+      "Cook rigatoni and mix with marinara sauce.",
+      "Combine pasta and eggplant, top with cheeses.",
+      "Bake or broil until cheese is bubbly."
+    ],
+    "cookingTime": "30 minutes",
+    "servings": 2,
+    "image": "https://static01.nyt.com/images/2022/04/05/dining/kc-eggplant-parmesan-pasta/kc-eggplant-parmesan-pasta-mediumSquareAt3X.jpg"
+  },
+  {
+    "id": "pasta-027",
+    "name": "Pumpkin Alfredo Pasta",
+    "ingredients": [
+      "200g fettuccine",
+      "1/2 cup pumpkin puree",
+      "1/2 cup cream",
+      "2 tbsp butter",
+      "1 garlic clove",
+      "Nutmeg",
+      "Parmesan"
+    ],
+    "instructions": [
+      "Cook fettuccine and set aside.",
+      "Sauté garlic in butter, add pumpkin and cream.",
+      "Season with salt, pepper, and nutmeg.",
+      "Toss with pasta and top with Parmesan."
+    ],
+    "cookingTime": "20 minutes",
+    "servings": 2,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwq6qhWHywJhim_2BzV-xk5jTvW_2JIUCLrQ&s"
+  },
+  {
+    "id": "pasta-028",
+    "name": "Lemon Basil Spaghetti",
+    "ingredients": [
+      "200g spaghetti",
+      "2 tbsp olive oil",
+      "Juice of 1 lemon",
+      "Zest of 1 lemon",
+      "Fresh basil",
+      "Grated Parmesan"
+    ],
+    "instructions": [
+      "Cook spaghetti and reserve some pasta water.",
+      "Mix oil, lemon juice, zest, and basil.",
+      "Toss with spaghetti and Parmesan.",
+      "Add pasta water to loosen if needed."
+    ],
+    "cookingTime": "15 minutes",
+    "servings": 2,
+    "image": "https://theviewfromgreatisland.com/wp-content/uploads/2021/08/lemonbasilpasta-9.jpg"
+  },
+  {
+    "id": "pasta-029",
+    "name": "Sardine Pasta",
+    "ingredients": [
+      "200g spaghetti",
+      "1 can sardines in oil",
+      "3 cloves garlic",
+      "1 chili (optional)",
+      "Parsley",
+      "Lemon wedge"
+    ],
+    "instructions": [
+      "Cook spaghetti and set aside.",
+      "Sauté garlic and chili, add sardines.",
+      "Toss in pasta and parsley.",
+      "Serve with a squeeze of lemon."
+    ],
+    "cookingTime": "15 minutes",
+    "servings": 2,
+    "image": "https://static01.nyt.com/images/2023/06/29/multimedia/SE-sardine-pasta-puttanesca-czkb/SE-sardine-pasta-puttanesca-czkb-mediumSquareAt3X.jpg"
+  },
+  {
+    "id": "ramen-021",
+    "name": "Creamy Mushroom Ramen",
+    "ingredients": [
+      "1 pack ramen noodles",
+      "1/2 cup mushrooms",
+      "1/2 cup milk or cream",
+      "1 tbsp butter",
+      "Garlic",
+      "Green onions"
+    ],
+    "instructions": [
+      "Sauté mushrooms and garlic in butter.",
+      "Add cream and simmer.",
+      "Boil ramen and mix with sauce.",
+      "Top with green onions."
+    ],
+    "cookingTime": "15 minutes",
+    "servings": 1,
+    "image": "https://www.budgetbytes.com/wp-content/uploads/2019/09/Vegan-Creamy-Mushroom-Ramen-close.jpg"
+  },
+  {
+    "id": "ramen-022",
+    "name": "Tantanmen Ramen",
+    "ingredients": [
+      "2 servings ramen noodles",
+      "200g ground pork",
+      "1 tbsp miso",
+      "1 tbsp tahini or peanut butter",
+      "Chili oil",
+      "Soy sauce",
+      "Garlic and ginger"
+    ],
+    "instructions": [
+      "Cook pork with garlic, ginger, and miso.",
+      "Mix tahini, chili oil, and soy sauce in bowl.",
+      "Boil ramen and broth, combine all ingredients.",
+      "Serve hot with toppings."
+    ],
+    "cookingTime": "30 minutes",
+    "servings": 2,
+    "image": "https://cdn.prod.website-files.com/654369dcffba1c0eb478187e/666ccedc994cf637eb896042_IMG_2231.jpeg"
+  },
+  {
+    "id": "ramen-023",
+    "name": "Coconut Curry Ramen",
+    "ingredients": [
+      "2 servings ramen noodles",
+      "1 cup coconut milk",
+      "1 tbsp red curry paste",
+      "Mixed vegetables",
+      "Lime juice",
+      "Cilantro"
+    ],
+    "instructions": [
+      "Boil coconut milk with curry paste.",
+      "Add vegetables and simmer.",
+      "Cook ramen and combine.",
+      "Serve with lime and cilantro."
+    ],
+    "cookingTime": "25 minutes",
+    "servings": 2,
+    "image": "https://www.servingdumplings.com/wp-content/uploads/2024/02/spicy-coconut-curry-ramen-tn-52efd674.jpg"
+  },
+  {
+    "id": "ramen-024",
+    "name": "Cheesy Ramen",
+    "ingredients": [
+      "1 pack ramen noodles",
+      "1/2 cup shredded cheese",
+      "1/4 cup milk",
+      "Butter",
+      "Salt and pepper"
+    ],
+    "instructions": [
+      "Cook ramen and drain.",
+      "Melt cheese, butter, and milk together.",
+      "Mix with ramen until creamy.",
+      "Season to taste."
+    ],
+    "cookingTime": "10 minutes",
+    "servings": 1,
+    "image": "https://christieathome.com/wp-content/uploads/2021/03/Kimchi-Cheese-Ramen-Stir-fry-5-b.jpg"
+  },
+  {
+    "id": "ramen-025",
+    "name": "Kimchi Ramen",
+    "ingredients": [
+      "1 pack ramen noodles",
+      "1/2 cup kimchi",
+      "1 egg",
+      "Green onions",
+      "Gochujang (optional)"
+    ],
+    "instructions": [
+      "Cook ramen with kimchi.",
+      "Add gochujang for extra spice.",
+      "Crack egg into soup and poach.",
+      "Top with green onions."
+    ],
+    "cookingTime": "15 minutes",
+    "servings": 1,
+    "image": "https://www.kikkoman.eu/fileadmin/_processed_/f/0/csm_1103-recipe-page-Spicy-Kimchi-Ramen-with-Pork_desktop_c8dc4e51e8.jpg"
+  },
+  {
+    "id": "ramen-026",
+    "name": "Cold Ramen Salad",
+    "ingredients": [
+      "1 pack ramen noodles",
+      "Cucumber",
+      "Carrots",
+      "Soy sauce",
+      "Sesame oil",
+      "Rice vinegar"
+    ],
+    "instructions": [
+      "Cook ramen, rinse in cold water.",
+      "Julienne vegetables.",
+      "Mix sauce ingredients and toss with noodles.",
+      "Serve chilled."
+    ],
+    "cookingTime": "15 minutes",
+    "servings": 1,
+    "image": "https://www.177milkstreet.com/assets/site/Recipes/Cold-Ramen-Salad-Ham-Tomato.jpg"
+  }
+]
