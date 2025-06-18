@@ -1,10 +1,12 @@
 import type { Config } from "tailwindcss";
+import {heroui} from "@heroui/react";
 
 export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
@@ -12,7 +14,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        funnel: ['"Funnel Display"', 'sans-serif'],
+      },
     },
   },
-  plugins: [],
+  plugins: [heroui()]
 } satisfies Config;

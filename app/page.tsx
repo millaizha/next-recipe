@@ -1,17 +1,13 @@
-'use client';
+"use client";
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from "react";
 import {
-  CheckIcon,
-  Combobox,
-  Group,
-  Highlight,
-  Pill,
-  PillsInput,
-  TextInput,
-  useCombobox,
-} from '@mantine/core';
-import RecipeCard from '@/app/components/RecipeCard';
+  Autocomplete,
+  AutocompleteItem,
+  Select,
+  SelectItem,
+} from "@heroui/react";
+import RecipeCard from "@/app/components/RecipeCard";
 
 interface Recipe {
   id: string;
@@ -23,267 +19,131 @@ interface Recipe {
   servings: number;
 }
 
-function getFilteredOptions(data: string[], searchQuery: string, limit: number) {
-  const result: string[] = [];
-
-  for (let i = 0; i < data.length; i++) {
-    if (result.length === limit) break;
-
-    if (data[i].toLowerCase().includes(searchQuery.trim().toLowerCase())) {
-      result.push(data[i]);
-    }
-  }
-
-  return result;
-}
-
-// Extract unique ingredients from recipes
-function extractUniqueIngredients(recipes: Recipe[]): string[] {
-  const ingredientSet = new Set<string>();
-  
-  recipes.forEach(recipe => {
-    recipe.ingredients.forEach(ingredient => {
-      // Extract the main ingredient (first word or key ingredient)
-      const mainIngredient = ingredient.toLowerCase().trim();
-      
-      // Check for noodle types
-      const noodleTypes = [
-        'spaghetti', 'penne', 'elbow macaroni', 'fettuccine', 'lasagna',
-        'ramen noodles', 'ziti', 'egg noodles', 'instant ramen',
-        'tagliatelle', 'fusilli pasta', 'fusilli', 'bowtie', 'gnocchi', 'rigatoni'
-      ];
-      
-      // Find matching noodle type
-      const matchingNoodle = noodleTypes.find(noodle => 
-        mainIngredient.includes(noodle)
-      );
-      
-      if (matchingNoodle) 
-        ingredientSet.add(matchingNoodle);
-      
-    });
-  });
-  
-  return Array.from(ingredientSet).sort();
-}
+const noodleTypes = [
+  "spaghetti",
+  "penne",
+  "elbow macaroni",
+  "fettuccine",
+  "lasagna",
+  "ramen noodles",
+  "ziti",
+  "egg noodles",
+  "instant ramen",
+  "tagliatelle",
+  "fusilli pasta",
+  "bowtie",
+  "gnocchi",
+  "rigatoni",
+];
 
 export default function HomePage() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedNoodles, setSelectedNoodles] = useState<string[]>([]);
   const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>([]);
-  const [searchValue, setSearchValue] = useState('');
-  const [availableIngredients, setAvailableIngredients] = useState<string[]>([]);
-  const [selectedIngredients, setSelectedIngredients] = useState<string[]>([]);
-  const [ingredientSearch, setIngredientSearch] = useState('');
-  const searchRef = useRef<HTMLDivElement>(null);
-
-  const searchCombobox = useCombobox({
-    onDropdownClose: () => searchCombobox.resetSelectedOption(),
-  });
-
-  const ingredientCombobox = useCombobox({
-    onDropdownClose: () => ingredientCombobox.resetSelectedOption(),
-    onDropdownOpen: () => ingredientCombobox.updateSelectedOptionIndex('active'),
-  });
 
   useEffect(() => {
-    fetch('/api/recipes')
+    fetch("/api/recipes")
       .then((res) => res.json())
       .then((data) => {
         setRecipes(data);
         setFilteredRecipes(data);
-        setAvailableIngredients(extractUniqueIngredients(data));
       });
   }, []);
 
-  // Filter recipes based on search and selected ingredients
   useEffect(() => {
-    let filtered = recipes;
+    let filtered = [...recipes];
 
-    // Apply name search filter
-    if (searchValue) {
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
       filtered = filtered.filter((recipe) =>
-        recipe.name.toLowerCase().includes(searchValue.toLowerCase())
+        recipe.name.toLowerCase().includes(q)
       );
     }
 
-    // Apply ingredient filter
-    if (selectedIngredients.length > 0) {
+    if (selectedNoodles.length > 0) {
       filtered = filtered.filter((recipe) =>
-        selectedIngredients.every(selectedIngredient =>
-          recipe.ingredients.some(ingredient =>
-            ingredient.toLowerCase().includes(selectedIngredient.toLowerCase())
-          )
+        selectedNoodles.some((noodle) =>
+          recipe.ingredients.some((ing) => ing.toLowerCase().includes(noodle))
         )
       );
     }
 
     setFilteredRecipes(filtered);
-  }, [searchValue, selectedIngredients, recipes]);
-
-  const recipeNames = recipes.map((recipe) => recipe.name);
-  const filteredNames = getFilteredOptions(recipeNames, searchValue, 5);
-
-  const searchOptions = filteredNames.map((name) => (
-    <Combobox.Option value={name} key={name}>
-      <Highlight highlight={searchValue} size="sm">
-        {name}
-      </Highlight>
-    </Combobox.Option>
-  ));
-
-  const handleSearchChange = (value: string) => {
-    setSearchValue(value);
-    searchCombobox.updateSelectedOptionIndex();
-    searchCombobox.openDropdown();
-  };
-
-  const handleIngredientSelect = (val: string) => {
-    setIngredientSearch('');
-    setSelectedIngredients((current) =>
-      current.includes(val) ? current.filter((v) => v !== val) : [...current, val]
-    );
-  };
-
-  const handleIngredientRemove = (val: string) =>
-    setSelectedIngredients((current) => current.filter((v) => v !== val));
-
-  const ingredientValues = selectedIngredients.map((item) => (
-    <Pill key={item} withRemoveButton onRemove={() => handleIngredientRemove(item)}>
-      {item}
-    </Pill>
-  ));
-
-  const ingredientOptions = availableIngredients
-    .filter((item) => item.toLowerCase().includes(ingredientSearch.trim().toLowerCase()))
-    .map((item) => (
-      <Combobox.Option value={item} key={item} active={selectedIngredients.includes(item)}>
-        <Group gap="md">
-          {selectedIngredients.includes(item) ? <CheckIcon size={12} /> : null}
-          <span>{item}</span>
-        </Group>
-      </Combobox.Option>
-    ));
+  }, [searchQuery, selectedNoodles, recipes]);
 
   return (
-    <main className="p-6">
-      {/* Header row with title and search */}
-      <div className="flex justify-between items-center mb-6 relative">
-        <h1 className="text-3xl font-bold">Noodle Recipes</h1>
+    <main className="relative min-h-screen">
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-yellow-50 z-0" />
 
-        <div className="flex gap-4 items-center">
-          {/* Ingredient Filter */}
-          <div className="w-80">
-            <Combobox 
-              store={ingredientCombobox} 
-              onOptionSubmit={handleIngredientSelect} 
-              withinPortal={false}
+      {/* Content */}
+      <div className="relative z-10 px-6 py-10">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+            The Noodle & Pasta Hub
+          </h1>
+          <p className="mt-4 text-gray-600 text-lg">
+            Your Ultimate Source for Delicious Noodle and Pasta Recipes from
+            Around the World
+          </p>
+        </div>
+
+        {/* Sticky Search/Filter Bar */}
+        <div className="sticky top-4 z-20 bg-white/90 backdrop-blur-md rounded-xl p-4 shadow-md mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div className="w-full sm:w-64">
+            <Autocomplete
+              label="Search"
+              placeholder="Search a recipe"
+              inputValue={searchQuery}
+              onInputChange={(value) => setSearchQuery(value)}
+              allowsCustomValue
+              defaultItems={recipes.map((recipe) => ({
+                key: recipe.id,
+                label: recipe.name,
+              }))}
+              size="lg"
+              className="w-full text-zinc-800"
+              classNames={{
+                base: "text-zinc-800",
+                popoverContent: "bg-white text-zinc-800",
+                listbox: "bg-white",
+              }}
             >
-              <Combobox.DropdownTarget>
-                <PillsInput onClick={() => ingredientCombobox.openDropdown()}>
-                  <Pill.Group>
-                    {ingredientValues}
-                    <Combobox.EventsTarget>
-                      <PillsInput.Field
-                        onFocus={() => ingredientCombobox.openDropdown()}
-                        onBlur={() => ingredientCombobox.closeDropdown()}
-                        value={ingredientSearch}
-                        placeholder="Filter by noodle type..."
-                        onChange={(event) => {
-                          ingredientCombobox.updateSelectedOptionIndex();
-                          setIngredientSearch(event.currentTarget.value);
-                        }}
-                        onKeyDown={(event) => {
-                          if (event.key === 'Backspace' && ingredientSearch.length === 0) {
-                            event.preventDefault();
-                            handleIngredientRemove(selectedIngredients[selectedIngredients.length - 1]);
-                          }
-                        }}
-                      />
-                    </Combobox.EventsTarget>
-                  </Pill.Group>
-                </PillsInput>
-              </Combobox.DropdownTarget>
-
-              <Combobox.Dropdown
-                style={{
-                  position: 'absolute',
-                  top: '100%',
-                  right: 0,
-                  zIndex: 50,
-                  width: '100%',
-                  background: 'white',
-                  boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-                  borderRadius: '0.375rem',
-                  overflow: 'hidden',
-                  maxHeight: '200px',
-                  overflowY: 'auto',
-                }}
-              >
-                <Combobox.Options>
-                  {ingredientOptions.length === 0 ? (
-                    <Combobox.Empty>No ingredients found</Combobox.Empty>
-                  ) : (
-                    ingredientOptions
-                  )}
-                </Combobox.Options>
-              </Combobox.Dropdown>
-            </Combobox>
+              {(item) => (
+                <AutocompleteItem key={item.key}>{item.label}</AutocompleteItem>
+              )}
+            </Autocomplete>
           </div>
 
-          {/* Recipe Name Search */}
-          <div className="relative w-64" ref={searchRef}>
-            <Combobox
-              onOptionSubmit={(value) => {
-                setSearchValue(value);
-                searchCombobox.closeDropdown();
+          <div className="w-full sm:w-64">
+            <Select
+              label="Filter by Noodles"
+              placeholder="Select noodle types"
+              selectionMode="multiple"
+              onSelectionChange={(keys) =>
+                setSelectedNoodles(Array.from(keys).map(String))
+              }
+              size="lg"
+              className="w-full text-zinc-800"
+              classNames={{
+                base: "text-zinc-800",
+                popoverContent: "bg-white text-zinc-800",
+                listbox: "bg-white",
               }}
-              withinPortal={false}
-              store={searchCombobox}
             >
-              <Combobox.Target>
-                <TextInput
-                  placeholder="Search recipe..."
-                  value={searchValue}
-                  onChange={(event) => handleSearchChange(event.currentTarget.value)}
-                  onClick={() => searchCombobox.openDropdown()}
-                  onFocus={() => searchCombobox.openDropdown()}
-                  onBlur={() => searchCombobox.closeDropdown()}
-                />
-              </Combobox.Target>
-
-              {/* Absolute floating dropdown */}
-              <Combobox.Dropdown
-                style={{
-                  position: 'absolute',
-                  top: '100%',
-                  left: 0,
-                  zIndex: 50,
-                  width: '100%',
-                  background: 'white',
-                  boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-                  borderRadius: '0.375rem',
-                  overflow: 'hidden',
-                  cursor: 'pointer',
-                }}
-              >
-                <Combobox.Options>
-                  {searchOptions.length === 0 ? (
-                    <Combobox.Empty>Nothing found</Combobox.Empty>
-                  ) : (
-                    searchOptions
-                  )}
-                </Combobox.Options>
-              </Combobox.Dropdown>
-            </Combobox>
+              {noodleTypes.map((type) => (
+                <SelectItem key={type}>{type}</SelectItem>
+              ))}
+            </Select>
           </div>
         </div>
-      </div>
 
-      {/* Recipe grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {filteredRecipes.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} />
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+          {filteredRecipes.map((recipe) => (
+            <RecipeCard key={recipe.id} recipe={recipe} />
+          ))}
+        </div>
       </div>
     </main>
   );

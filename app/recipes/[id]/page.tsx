@@ -4,6 +4,8 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import RecipeDetail from '@/app/components/RecipeDetail';
 import { useState, useEffect } from 'react';
+import { ArrowLeft } from 'lucide-react';
+import { Spinner } from '@heroui/react';
 
 interface Recipe {
   id: string;
@@ -46,17 +48,30 @@ export default function RecipeDetailPage() {
   }
 
   if (!recipe) {
-    return (
-      <div className="p-6 text-center">
-        <p>Loading recipe...</p>
-      </div>
-    );
-  }
+  return (
+    <div className="h-screen w-screen flex flex-col items-center justify-center bg-yellow-50">
+      <Spinner
+        classNames={{ label: "text-zinc-700 text-lg font-medium mt-6" }}
+        label="Loading Recipe..."
+        variant="wave"
+        color="warning"
+        size="lg"
+      />
+    </div>
+  );
+}
   
   return (
-    <div>
-      <Link href="/" className="inline-block px-4 py-2 ml-6 mt-4 text-sm text-blue-600 underline">← Back to Home</Link>
+    <div className='bg-yellow-50 text-zinc-800 h-full relative'>
+      <Link
+        href="/"
+        className="ml-6 mt-6 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-yellow-400 hover:bg-yellow-500 rounded-full shadow-md transition-colors"
+      >
+        <ArrowLeft className="w-4 h-4" />
+        Back to Home
+      </Link>
       <RecipeDetail {...recipe} />
+      <div className="absolute right-0 -top-10 w-1/3 h-1/3 bg-amber-200 rounded-bl-[100%] pointer-events-none" />
     </div>
   );
 }
