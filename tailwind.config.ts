@@ -14,9 +14,6 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      fontFamily: {
-        funnel: ['"Funnel Display"', "sans-serif"],
-      },
     },
   },
   plugins: [

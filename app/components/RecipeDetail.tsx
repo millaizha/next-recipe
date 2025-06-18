@@ -15,8 +15,6 @@ interface Recipe {
   servings: number;
 }
 
-interface RecipeDetailProps extends Recipe {}
-
 const noodleTypes = [
   "spaghetti",
   "penne",
@@ -42,7 +40,7 @@ export default function RecipeDetail({
   instructions,
   cookingTime,
   servings,
-}: RecipeDetailProps) {
+}: Recipe) {
   const words = name.split(" ");
   const accentIndex = 1;
 

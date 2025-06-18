@@ -12,10 +12,10 @@ interface Recipe {
   image: string;
 }
 
-export async function GET(request: Request) {
+export async function GET() {
   const filePath = path.join(process.cwd(), 'data', 'recipes.json');
   const rawData = readFileSync(filePath, 'utf-8');
-  let recipes: Recipe[] = JSON.parse(rawData);
+  const recipes: Recipe[] = JSON.parse(rawData);
 
   return NextResponse.json(recipes);
 }

@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Funnel_Display } from "next/font/google";
 
 import LenisProvider from "@/app/providers/LenisProvider";
 
 export const metadata: Metadata = {
-  title: "Noodle Recipes",
+  title: "Noodle and Pasta Recipes",
   description:
     "Discover and share delicious noodle recipes from around the world.",
+  icons: {
+    icon: "/logo.ico",
+  }
 };
+
+const funnelDisplay = Funnel_Display({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-funnel-display",
+});
 
 export default function RootLayout({
   children,
@@ -16,20 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-
-      <body className="font-funnel antialiased">
+      <body className={`${funnelDisplay.className} bg-background text-foreground`}>
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>

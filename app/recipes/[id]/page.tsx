@@ -36,7 +36,7 @@ export default function RecipeDetailPage() {
         }
       })
       .catch(() => setError("Failed to fetch recipe data."));
-  }, []);
+  }, [recipeId]);
 
   if (error) {
     return (
