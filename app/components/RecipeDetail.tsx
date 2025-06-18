@@ -14,7 +14,6 @@ interface RecipeDetailProps {
 }
 
 export default function RecipeDetail({
-  id,
   name,
   image,
   ingredients,
@@ -35,7 +34,7 @@ export default function RecipeDetail({
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <p className="text-sm lg:text-2xl tracking-widest uppercase text-yellow-400 font-semibold mb-2">
-              Let's Cook
+              Let&apos;s Cook
             </p>
             <h1 className="font-extrabold leading-tight text-4xl sm:text-5xl lg:text-6xl">
               {words.map((word, i) => (
