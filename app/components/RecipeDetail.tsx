@@ -1,4 +1,7 @@
+"use client";
+
 import { Clock, Users } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface RecipeDetailProps {
   id: string;
@@ -19,36 +22,32 @@ export default function RecipeDetail({
   cookingTime,
   servings,
 }: RecipeDetailProps) {
-  // Split the recipe name so we can accent the second word for a bit of visual flair
   const words = name.split(" ");
-  const accentIndex = 1; // highlights the second word
+  const accentIndex = 1;
 
   return (
-    <div className="">
-      {/* Hero Section */}
+    <div>
       <section className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-center relative z-10">
-          {/* Text Block */}
-          <div>
-            <p className="text-sm tracking-widest uppercase text-yellow-400 font-semibold mb-2">
+          <motion.div
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <p className="text-sm lg:text-2xl tracking-widest uppercase text-yellow-400 font-semibold mb-2">
               Let's Cook
             </p>
-
             <h1 className="font-extrabold leading-tight text-4xl sm:text-5xl lg:text-6xl">
               {words.map((word, i) => (
                 <span
                   key={i}
-                  className={
-                    i === accentIndex ? "text-yellow-400" : "inherit"
-                  }
+                  className={i === accentIndex ? "text-yellow-400" : "inherit"}
                 >
                   {word + (i < words.length - 1 ? " " : "")}
                 </span>
               ))}
             </h1>
-
-            {/* Meta */}
-            <div className="flex flex-wrap gap-8 mt-8 text-base">
+            <div className="flex flex-wrap gap-8 mt-8 text-base lg:text-xl">
               <span className="flex items-center gap-3">
                 <Users className="w-5 h-5 text-yellow-400" />
                 {servings} Servings
@@ -58,56 +57,84 @@ export default function RecipeDetail({
                 {cookingTime}
               </span>
             </div>
-          </div>
-
-          {/* Image */}
-          <div className="relative w-full h-80 md:h-[420px] rounded-2xl shadow-xl overflow-hidden">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
+          </motion.div>
+          <motion.div
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+            className="relative w-full h-80 md:h-[420px] rounded-2xl shadow-xl overflow-hidden"
+          >
             <img
               src={image}
               alt={name}
               className="object-cover w-full h-full"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
-
-      {/* Details Section */}
       <section className="max-w-6xl mx-auto px-4 pb-20">
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Ingredients */}
-          <div>
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-3">
               Ingredients
             </h2>
-            <div className="bg-yellow-100 rounded-2xl p-6 space-y-2 shadow-lg">
+            <motion.div
+              className="bg-yellow-100 rounded-2xl p-6 space-y-2 shadow-lg"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                visible: { transition: { staggerChildren: 0.1 } },
+              }}
+            >
               {ingredients.map((item, idx) => (
-                <p key={idx} className="text-lg font-medium leading-relaxed">
+                <motion.p
+                  key={idx}
+                  variants={{
+                    hidden: { opacity: 0, y: 10 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  className="text-lg lg:text-2xl font-medium leading-relaxed"
+                >
                   {item}
-                </p>
+                </motion.p>
               ))}
-            </div>
-          </div>
-
-          {/* Instructions */}
-          <div>
+            </motion.div>
+          </motion.div>
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          >
             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-3">
               Instructions
             </h2>
             <ol className="space-y-8 relative">
-  {instructions.map((step, idx) => (
-    <li key={idx} className="relative pl-20">
-      {/* Step badge */}
-      <span className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-yellow-400 text-white font-semibold text-lg">
-        {String(idx + 1).padStart(2, "0")}
-      </span>
-      <p className="text-lg lg:text-2xl font-medium leading-relaxed">
-        {step}
-      </p>
-    </li>
-  ))}
-</ol>
-          </div>
+              {instructions.map((step, idx) => (
+                <motion.li
+                  key={idx}
+                  className="relative pl-16"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1, duration: 0.4 }}
+                >
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-yellow-400 text-white font-semibold text-lg">
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <p className="text-lg lg:text-2xl font-medium leading-relaxed">
+                    {step}
+                  </p>
+                </motion.li>
+              ))}
+            </ol>
+          </motion.div>
         </div>
       </section>
     </div>
