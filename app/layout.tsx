@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+import LenisProvider from "@/app/providers/LenisProvider";
+
 export const metadata: Metadata = {
   title: "Noodle Recipes",
   description:
@@ -27,7 +29,9 @@ export default function RootLayout({
         />
       </head>
 
-      <body className={`font-funnel antialiased`}>{children}</body>
+      <body className="font-funnel antialiased">
+        <LenisProvider>{children}</LenisProvider>
+      </body>
     </html>
   );
 }

@@ -64,8 +64,8 @@ export default function RecipeDetailPage() {
   }
 
   return (
-    <div className="bg-yellow-50 text-zinc-800 h-full relative p-4">
-      <div className="sticky top-4 z-30 p-4 lg:px-8">
+    <div className="bg-yellow-50 text-zinc-800 h-full relative p-4 px-12">
+      <div className="sticky top-4 z-30 p-4 lg:px-2">
         <Link
           href="/"
           className="inline-flex items-center gap-2 px-4 py-2 text-sm lg:text-xl font-medium text-white bg-yellow-400 hover:bg-amber-400 rounded-full shadow transition-all hover:scale-105 duration-300"
@@ -75,7 +75,7 @@ export default function RecipeDetailPage() {
         </Link>
       </div>
       <RecipeDetail {...recipe} />
-      <div className="absolute right-0 -top-10 w-1/3 h-1/3 bg-amber-200 rounded-bl-[100%] pointer-events-none" />
+      <div className="fixed right-0 -top-10 w-1/3 h-1/3 bg-gradient-to-b from-yellow-200/80 to-yellow-50 rounded-bl-[100%] pointer-events-none" />
     </div>
   );
 }

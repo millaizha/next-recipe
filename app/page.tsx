@@ -6,7 +6,9 @@ import {
   AutocompleteItem,
   Select,
   SelectItem,
+  Chip,
 } from "@heroui/react";
+import { Search } from "lucide-react";
 import RecipeCard from "@/app/components/RecipeCard";
 import { motion } from "framer-motion";
 
@@ -38,6 +40,7 @@ const noodleTypes = [
 ];
 
 export default function HomePage() {
+  const [loading, setLoading] = useState(true);
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedNoodles, setSelectedNoodles] = useState<string[]>([]);
@@ -49,6 +52,7 @@ export default function HomePage() {
       .then((data) => {
         setRecipes(data);
         setFilteredRecipes(data);
+        setLoading(false);
       });
   }, []);
 
@@ -76,14 +80,14 @@ export default function HomePage() {
   return (
     <main className="relative min-h-screen">
       <div className="absolute inset-0 bg-yellow-50 z-0" />
-      <div className="relative z-10 px-6 py-10">
+      <div className="relative z-10 px-12 py-10">
         <div className="relative flex flex-col items-center justify-center min-h-[50vh] pt-10">
           <span
             aria-hidden
-            className="absolute -top-24 md:-top-32 left-1/2 -translate-x-1/2
-                 w-[550px] h-[275px] md:w-[700px] md:h-[350px]
+            className="fixed -top-24 md:-top-32 left-1/2 -translate-x-1/2
+                 w-[550px] h-[275px] md:w-[850px] md:h-[550px]
                  bg-gradient-to-b from-yellow-200/80 to-yellow-50
-                 rounded-b-[350px]   /* bottom‑only curvature */
+                 rounded-b-[450px]   /* bottom‑only curvature */
                  -z-10"
           />
           <motion.h1
@@ -104,7 +108,7 @@ export default function HomePage() {
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="mt-6 text-2xl md:text-4xl text-gray-700 text-center max-w-2xl mx-auto leading-relaxed"
+            className="mt-6 text-2xl md:text-4xl text-zinc-700 text-center max-w-2xl mx-auto leading-relaxed"
           >
             Your Ultimate Source for{" "}
             <span className="font-semibold text-yellow-500">Delicious</span>{" "}
@@ -114,7 +118,7 @@ export default function HomePage() {
         <div className="sticky top-4 z-20 bg-white/90 backdrop-blur-md rounded-xl p-4 shadow-md mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="w-full sm:w-96">
             <Autocomplete
-              label="Search"
+              aria-label="Search Recipes"
               placeholder="Search a recipe"
               inputValue={searchQuery}
               onInputChange={(value) => setSearchQuery(value)}
@@ -125,6 +129,9 @@ export default function HomePage() {
               }))}
               size="md"
               className="w-full text-zinc-800"
+              radius="full"
+              startContent={<Search className="text-default-400" />}
+              variant="bordered"
               classNames={{
                 popoverContent: "bg-white text-zinc-800",
                 listbox: "bg-white",
@@ -137,8 +144,8 @@ export default function HomePage() {
           </div>
           <div className="w-full sm:w-96">
             <Select
-              label="Filter by Noodles"
-              placeholder="Select noodle types"
+              aria-label="Filter by Noodles"
+              placeholder="Filter by Noodles"
               selectionMode="multiple"
               selectedKeys={selectedNoodles}
               onSelectionChange={(keys) =>
@@ -146,16 +153,40 @@ export default function HomePage() {
               }
               size="md"
               className="w-full text-zinc-800"
+              radius="full"
+              isMultiline
+              variant="bordered"
               classNames={{
                 base: "text-zinc-800",
                 popoverContent: "bg-white text-zinc-800",
                 listbox: "bg-white",
               }}
+              renderValue={(items) => (
+                <div className="flex flex-wrap gap-2 py-2">
+                  {items.map((item) => (
+                    <Chip
+                      key={item.key}
+                      color="warning"
+                      variant="flat"
+                      size="md"
+                      onClick={() =>
+                        setSelectedNoodles((prev) =>
+                          prev.filter((val) => val !== item.key)
+                        )
+                      }
+                      className="cursor-pointer hover:line-through transition-all duration-200"
+                    >
+                      {item.key}
+                    </Chip>
+                  ))}
+                </div>
+              )}
             >
               {noodleTypes.map((type) => (
                 <SelectItem key={type}>{type}</SelectItem>
               ))}
             </Select>
+
             {selectedNoodles.length > 0 && (
               <button
                 onClick={() => setSelectedNoodles([])}
@@ -167,9 +198,25 @@ export default function HomePage() {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-          {filteredRecipes.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))}
+          {loading
+            ? Array(6)
+                .fill(null)
+                .map((_, idx) => (
+                  <RecipeCard
+                    key={`skeleton-${idx}`}
+                    isLoaded={false}
+                    recipe={{
+                      id: "",
+                      name: "",
+                      image: undefined,
+                      cookingTime: "",
+                      servings: 0,
+                    }}
+                  />
+                ))
+            : filteredRecipes.map((recipe) => (
+                <RecipeCard key={recipe.id} recipe={recipe} />
+              ))}
         </div>
       </div>
     </main>
