@@ -33,7 +33,7 @@ export default {
             fontSize: {
               small: "1.25rem",
               medium: "2rem",
-              large: "2.25rem",
+              large: "2.1rem",
             },
           },
         },

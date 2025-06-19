@@ -81,26 +81,26 @@ export default function RecipeDetail({
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <p className="text-sm lg:text-2xl tracking-widest uppercase text-yellow-400 font-semibold mb-2">
+            <p className="text-sm lg:text-2xl tracking-widest uppercase text-yellow-600 font-semibold mb-2">
               Let&apos;s Cook
             </p>
-            <h1 className="font-extrabold leading-tight text-4xl sm:text-5xl lg:text-6xl">
+            <h1 className="font-extrabold leading-tight text-yellow-800 text-4xl sm:text-5xl lg:text-6xl">
               {words.map((word, i) => (
                 <span
                   key={i}
-                  className={i === accentIndex ? "text-yellow-400" : "inherit"}
+                  className={i === accentIndex ? "text-yellow-600" : "inherit"}
                 >
                   {word + (i < words.length - 1 ? " " : "")}
                 </span>
               ))}
             </h1>
-            <div className="flex flex-wrap gap-8 mt-8 text-base lg:text-xl z-10">
+            <div className="flex flex-wrap gap-8 mt-8 text-md lg:text-2xl z-10">
               <span className="flex items-center gap-3">
-                <Users className="w-5 h-5 text-yellow-400" />
+                <Users className="w-5 h-5 text-yellow-600" />
                 {servings} Servings
               </span>
               <span className="flex items-center gap-3">
-                <Clock className="w-5 h-5 text-yellow-400" />
+                <Clock className="w-5 h-5 text-yellow-600" />
                 {cookingTime}
               </span>
             </div>
@@ -147,7 +147,7 @@ export default function RecipeDetail({
                     hidden: { opacity: 0, y: 10 },
                     visible: { opacity: 1, y: 0 },
                   }}
-                  className="text-lg lg:text-2xl font-medium leading-relaxed"
+                  className="text-lg lg:text-2xl font-medium leading-relaxed text-zinc-800"
                 >
                   {item}
                 </motion.p>
@@ -177,7 +177,7 @@ export default function RecipeDetail({
                   <span className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-yellow-400 text-white font-semibold text-lg">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
-                  <p className="text-lg lg:text-2xl font-medium leading-relaxed">
+                  <p className="text-lg lg:text-2xl font-medium leading-relaxed text-zinc-800">
                     {step}
                   </p>
                 </motion.li>
@@ -188,10 +188,10 @@ export default function RecipeDetail({
       </section>
       {similarRecipes.length > 0 && (
         <section className="max-w-8xl mx-auto px-4 pb-20 z-10 relative">
-          <h2 className="text-xl md:text-4xl font-bold mb-6 text-yellow-500">
-            Similar Dishes Using <span className="text-zinc-800">{noodleType?.replace(/\w\S*/g, (txt) => txt[0].toUpperCase() + txt.slice(1))}</span>
+          <h2 className="text-2xl md:text-4xl font-bold mb-6 text-yellow-600">
+            Similar Dishes Using <span className="text-yellow-800">{noodleType?.replace(/\w\S*/g, (txt) => txt[0].toUpperCase() + txt.slice(1))}</span>
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {similarRecipes.map((recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
             ))}

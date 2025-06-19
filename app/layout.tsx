@@ -8,9 +8,6 @@ export const metadata: Metadata = {
   title: "Noodle and Pasta Recipes",
   description:
     "Discover and share delicious noodle recipes from around the world.",
-  icons: {
-    icon: "/logo.ico",
-  }
 };
 
 const funnelDisplay = Funnel_Display({

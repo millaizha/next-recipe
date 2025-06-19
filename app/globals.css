@@ -7,3 +7,12 @@ body {
   @apply overscroll-none;
   background-color: #fefce8;
 }
+
+[data-ignore-lenis],
+[role="listbox"],
+[data-slot="popover-content"] {
+  max-height: 16rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+

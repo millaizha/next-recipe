@@ -94,7 +94,7 @@ export default function HomePage() {
             initial={{ y: -40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-5xl md:text-7xl text-center font-extrabold text-yellow-500 drop-shadow-sm tracking-tight"
+            className="text-5xl md:text-7xl text-center font-extrabold text-yellow-700 drop-shadow-sm tracking-tight"
           >
             🍜 The Noodle & Pasta Hub
           </motion.h1>
@@ -111,12 +111,12 @@ export default function HomePage() {
             className="mt-6 text-2xl md:text-4xl text-zinc-700 text-center max-w-2xl mx-auto leading-relaxed"
           >
             Your Ultimate Source for{" "}
-            <span className="font-semibold text-yellow-500">Delicious</span>{" "}
+            <span className="font-semibold text-yellow-700">Delicious</span>{" "}
             Noodle and Pasta Recipes from Around the World
           </motion.p>
         </div>
         <div className="sticky top-4 z-20 bg-white/90 backdrop-blur-md rounded-xl p-4 shadow-md mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div className="w-full sm:w-96">
+          <div className="w-full items-start">
             <Autocomplete
               aria-label="Search Recipes"
               placeholder="Search a recipe"
@@ -127,14 +127,15 @@ export default function HomePage() {
                 key: recipe.id,
                 label: recipe.name,
               }))}
-              size="md"
-              className="w-full text-zinc-800"
+              size="lg"
+              className="w-full text-yellow-800"
               radius="full"
               startContent={<Search className="text-default-400" />}
               variant="bordered"
               classNames={{
-                popoverContent: "bg-white text-zinc-800",
+                popoverContent: "bg-white text-yellow-800",
                 listbox: "bg-white",
+                base: "data-[slot='popover-content']:data-ignore-lenis",
               }}
             >
               {(item) => (
@@ -142,7 +143,7 @@ export default function HomePage() {
               )}
             </Autocomplete>
           </div>
-          <div className="w-full sm:w-96">
+          <div className="w-full">
             <Select
               aria-label="Filter by Noodles"
               placeholder="Filter by Noodles"
@@ -151,18 +152,18 @@ export default function HomePage() {
               onSelectionChange={(keys) =>
                 setSelectedNoodles(Array.from(keys).map(String))
               }
-              size="md"
-              className="w-full text-zinc-800"
+              size="lg"
+              className="w-full text-yellow-800"
               radius="full"
               isMultiline
               variant="bordered"
               classNames={{
-                base: "text-zinc-800",
-                popoverContent: "bg-white text-zinc-800",
+                base: "data-[slot='popover-content']:data-ignore-lenis",
+                popoverContent: "bg-white text-yellow-800",
                 listbox: "bg-white",
               }}
               renderValue={(items) => (
-                <div className="flex flex-wrap gap-2 py-2">
+                <div className="flex flex-wrap gap-2 px-8 py-4 md:py-2 md:px-4">
                   {items.map((item) => (
                     <Chip
                       key={item.key}
@@ -190,7 +191,7 @@ export default function HomePage() {
             {selectedNoodles.length > 0 && (
               <button
                 onClick={() => setSelectedNoodles([])}
-                className="mt-2 text-sm text-yellow-600 hover:underline"
+                className="mt-2 text-mlg text-yellow-600 hover:underline"
               >
                 Clear Filter
               </button>

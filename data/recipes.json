@@ -138,7 +138,7 @@
     ],
     "cookingTime": "20 minutes",
     "servings": 2,
-    "image": "https://www.umami.recipes/api/image/recipes/vnnWaa8rpkZB0RuszoIK/images/PNYdXgtFFEh9es1oYh7KZG?w=3840&q=75"
+    "image": "https://www.marionskitchen.com/wp-content/uploads/2019/05/Shoyu-Ramen3-500x500.jpg"
   },
   {
     "id": "ramen-002",
@@ -177,12 +177,12 @@
       "Nori"
     ],
     "instructions": [
-      "Simmer pork bone broth for deep flavor.",
+      "Simmer pork bone broth for deep flavor for 8 hours.",
       "Cook noodles and drain.",
       "Place noodles in a bowl, pour in hot broth.",
       "Add toppings: pork, egg, mushrooms, bamboo, and nori."
     ],
-    "cookingTime": "8 hours (for broth), 10 minutes (assembly)",
+    "cookingTime": "8 hours and 10 minutes",
     "servings": 2,
     "image": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2024-03-tonkotsu-ramen%2Ftonkotsu-ramen-195"
   },

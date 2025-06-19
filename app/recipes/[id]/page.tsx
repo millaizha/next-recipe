@@ -68,7 +68,7 @@ export default function RecipeDetailPage() {
       <div className="sticky top-4 z-30 p-4 lg:px-2">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 px-4 py-2 text-sm lg:text-xl font-medium text-white bg-yellow-400 hover:bg-amber-400 rounded-full shadow transition-all hover:scale-105 duration-300"
+          className="inline-flex items-center gap-2 px-4 py-2 text-md lg:text-xl font-medium text-white bg-yellow-800 hover:bg-amber-700 rounded-full shadow transition-all hover:scale-105 duration-300"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Home
