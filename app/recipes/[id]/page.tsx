@@ -6,6 +6,7 @@ import RecipeDetail from "@/components/RecipeDetail";
 import { useState, useEffect } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Spinner } from "@heroui/react";
+import "@/styles/styles.scss";
 
 // Type for recipe object
 interface Recipe {
@@ -44,7 +45,7 @@ export default function RecipeDetailPage() {
   // Show error message if fetch fails or recipe doesn't exist
   if (error) {
     return (
-      <div className="min-h-screen bg-yellow-50 flex flex-col items-center justify-center px-4 text-center">
+      <div className="error-loading">
         <div className="bg-white shadow-lg rounded-xl p-10 max-w-lg w-full">
           {/* Emoji Icon */}
           <div className="text-6xl mb-4">😞</div>
@@ -57,7 +58,7 @@ export default function RecipeDetailPage() {
           {/* Back to Home Button */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-4 py-2 text-md lg:text-xl font-medium text-white bg-yellow-800 hover:bg-amber-700 rounded-full shadow transition-all hover:scale-105 duration-300"
+            className="back-button"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Home
@@ -70,9 +71,9 @@ export default function RecipeDetailPage() {
   // Show loading spinner while fetching recipe
   if (!recipe) {
     return (
-      <div className="h-screen w-screen flex flex-col items-center justify-center bg-yellow-50">
+      <div className="error-loading">
         <Spinner
-          classNames={{ label: "text-zinc-700 text-lg font-medium mt-6" }}
+          classNames={{ label: "card-info mt-4" }}
           label="Loading Recipe..."
           variant="wave"
           color="warning"
@@ -89,7 +90,7 @@ export default function RecipeDetailPage() {
       <div className="sticky top-4 z-30 p-4 lg:px-2">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 px-4 py-2 text-md lg:text-xl font-medium text-white bg-yellow-800 hover:bg-amber-700 rounded-full shadow transition-all hover:scale-105 duration-300"
+          className="back-button"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Home
@@ -100,7 +101,7 @@ export default function RecipeDetailPage() {
       <RecipeDetail {...recipe} />
 
       {/* Decorative background shape */}
-      <div className="fixed right-0 -top-10 w-1/3 h-1/3 bg-gradient-to-b from-yellow-200/80 to-yellow-50 rounded-bl-[100%] pointer-events-none" />
+      <div className="decorative-hero-shape hero-shape-right" />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import "@/styles/styles.scss"
 import { useEffect, useState } from "react";
 import {
   Autocomplete,
@@ -95,10 +96,7 @@ export default function HomePage() {
           {/* Decorative background shape */}
           <span
             aria-hidden
-            className="fixed -top-24 md:-top-32 left-1/2 -translate-x-1/2
-              w-[550px] h-[275px] md:w-[850px] md:h-[550px]
-              bg-gradient-to-b from-yellow-200/80 to-yellow-50
-              rounded-b-[450px] -z-10"
+            className="decorative-hero-shape hero-shape-center"
           />
 
           {/* Title */}
@@ -133,7 +131,7 @@ export default function HomePage() {
         </div>
 
         {/* Filters (search and noodle type) */}
-        <div className="sticky top-4 z-20 bg-white/90 backdrop-blur-md rounded-xl p-4 shadow-md mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div className="filters">
           
           {/* Search bar */}
           <div className="w-full items-start">
@@ -223,7 +221,7 @@ export default function HomePage() {
         </div>
 
         {/* Recipe card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        <div className="card-grid">
           {loading
             ? Array(6)
                 .fill(null)

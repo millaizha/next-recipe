@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Clock, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import RecipeCard from "@/components/RecipeCard";
+import "@/styles/styles.scss";
 
 // Type for recipe objects
 interface Recipe {
@@ -82,7 +83,7 @@ export default function RecipeDetail({
     <div>
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-center relative z-10">
+        <div className="recipe-detail-container">
           {/* Recipe Title and Info */}
           <motion.div
             initial={{ x: -50, opacity: 0 }}
@@ -142,7 +143,7 @@ export default function RecipeDetail({
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2 className="text-2xl font-semibold mb-6 flex items-center gap-3">
+            <h2 className="ingredient-instructions-title">
               Ingredients
             </h2>
             <motion.div
@@ -162,7 +163,7 @@ export default function RecipeDetail({
                     hidden: { opacity: 0, y: 10 },
                     visible: { opacity: 1, y: 0 },
                   }}
-                  className="text-lg lg:text-2xl font-medium leading-relaxed text-zinc-800"
+                  className="ingredient-instructions-text"
                 >
                   {item}
                 </motion.p>
@@ -177,7 +178,7 @@ export default function RecipeDetail({
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
-            <h2 className="text-2xl font-semibold mb-6 flex items-center gap-3">
+            <h2 className="ingredient-instructions-title">
               Instructions
             </h2>
             <ol className="space-y-8 relative">
@@ -191,10 +192,10 @@ export default function RecipeDetail({
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1, duration: 0.4 }}
                 >
-                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-yellow-400 text-white font-semibold text-lg">
+                  <span className="ingredient-step-number">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
-                  <p className="text-lg lg:text-2xl font-medium leading-relaxed text-zinc-800">
+                  <p className="ingredient-instructions-text">
                     {step}
                   </p>
                 </motion.li>
@@ -216,7 +217,7 @@ export default function RecipeDetail({
               )}
             </span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="card-grid">
             {/* Render similar recipes */}
             {similarRecipes.map((recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
