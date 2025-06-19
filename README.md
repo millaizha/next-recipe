@@ -1,30 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍜 Recipe Application - Next.js Project
 
-## Getting Started
+A modern recipe application built with **Next.js** that allows users to browse a variety of noodle and pasta recipes, view detailed recipe information, and enjoy a smooth, responsive user experience.
 
-First, run the development server:
+---
 
-```bash
-pnpm dev
+## 🌐 Overview
+
+This project demonstrates a clean and interactive recipe browsing experience. Users can:
+
+- Search and filter recipes by keyword or noodle type
+- View ingredients and instructions
+- Navigate between a responsive home page and dynamic recipe detail pages
+
+---
+
+## ✨ Features
+
+- 🧠 **React Hooks** for client-side data fetching and UI updates
+- 🔍 **Search & Filter** support with Autocomplete and multi-select dropdowns
+- 📄 **REST API** built from local JSON file via `/api/recipes`
+- 📱 **Fully Responsive** layout using **Tailwind CSS**
+- 🎨 Smooth scroll and UI animations with **Framer Motion** and **Lenis**
+
+---
+
+## 🗂️ Project Structure
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+recipe-app/
+├── app/
+│   ├── api/
+│   │   └── recipes/
+│   │       └── route.ts      
+│   ├── recipes/
+│   │   └── \[id]/page.tsx   
+│   ├── providers/
+│   │   └── LenisProvider.tsx 
+│   └── page.tsx       
+├── data/
+│   └── recipes.json 
+├── components/
+│   ├── RecipeCard.tsx    
+│   └── RecipeDetail.tsx    
+├── styles/
+│   └── globals.css            
+└── package.json
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+````
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Technologies Used
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://github.com/motiondivision/motion) – animations
+- [Lenis](https://lenis.darkroom.engineering/) – smooth scrolling
+- [@heroui/react](https://heroui.com) – UI components (Autocomplete, Select)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Getting Started
 
-## Deploy on Vercel
+### 1. Clone the repository
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+git clone https://github.com/millaizha/next-recipe.git
+cd next-recipe
+````
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the development server
+
+```bash
+npm run dev
+```
+
+Visit `http://localhost:3000` in your browser to view the app.
+
+---
+
+## 🔧 Implementation Details
+
+### ✅ API (`/api/recipes`)
+
+* Returns recipe data from the local JSON file
+
+### ✅ Home Page (`app/page.tsx`)
+
+* Displays a grid of recipes
+* Includes search (by name) and filter (by noodle type)
+
+### ✅ Detail Page (`app/recipes/[id]/page.tsx`)
+
+* Dynamic routing based on recipe ID
+* Full display of ingredients, instructions, and metadata
+
+### ✅ Styling
+
+* Tailwind-based layout
+* Scroll animation using Lenis
+* Entry animations using Framer Motion
+
+---
+
+## 📄 License
+
+This project is for a practice activity as an intern at Old.St Labs and not licensed for commercial use. Adapt freely for personal and academic use.
+
+---

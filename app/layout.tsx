@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/styles/globals.css";
 import { Funnel_Display } from "next/font/google";
 
 import LenisProvider from "@/app/providers/LenisProvider";

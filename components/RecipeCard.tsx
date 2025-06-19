@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ArrowRight, Clock, Users } from "lucide-react";
 import { Skeleton } from "@heroui/react";
 
+// Type for recipe object
 interface Recipe {
   id: string;
   name: string;
@@ -13,19 +14,23 @@ interface Recipe {
   servings: number;
 }
 
+// Props for RecipeCard component
 interface RecipeCardProps {
   recipe: Recipe;
   isLoaded?: boolean;
 }
 
 export default function RecipeCard({ recipe, isLoaded }: RecipeCardProps) {
+  // Track if the image has loaded
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
+  // Use parent-provided isLoaded if available, else use image load state
   const resolvedIsLoaded = isLoaded ?? isImageLoaded;
 
   return (
     <Link href={`/recipes/${recipe.id}`} className="block h-full">
       <div className="relative h-full flex transition-transform duration-300 hover:scale-105">
+        {/* Recipe image with skeleton loader */}
         <div className="absolute top-1/2 right-[-4] md:right-4 transform -translate-y-1/2">
           <Skeleton
             isLoaded={resolvedIsLoaded}
@@ -39,11 +44,13 @@ export default function RecipeCard({ recipe, isLoaded }: RecipeCardProps) {
             />
           </Skeleton>
         </div>
+        {/* Recipe details */}
         <div
           className="p-8 pr-36 w-3/4 sm:w-5/6 bg-white rounded-2xl shadow-md 
              flex flex-col justify-between hover:shadow-lg"
         >
           <div>
+            {/* Name, cooking time, and servings with skeleton loader */}
             <Skeleton isLoaded={resolvedIsLoaded} className="rounded-md">
               <h2 className="text-xl xl:text-3xl font-semibold text-yellow-700 mb-2">
                 {recipe.name}
@@ -60,6 +67,7 @@ export default function RecipeCard({ recipe, isLoaded }: RecipeCardProps) {
               </div>
             </Skeleton>
           </div>
+          {/* Arrow button for navigation */}
           <div className="mt-auto group">
             <div
               className="w-10 h-10 xl:w-12 xl:h-12 bg-yellow-400 rounded-full flex items-center justify-center 

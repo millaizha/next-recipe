@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { Clock, Users } from "lucide-react";
 import { motion } from "framer-motion";
-import RecipeCard from "@/app/components/RecipeCard";
+import RecipeCard from "@/components/RecipeCard";
 
+// Type for recipe objects
 interface Recipe {
   id: string;
   name: string;
@@ -15,6 +16,7 @@ interface Recipe {
   servings: number;
 }
 
+// Noodle types for similar recipe filtering
 const noodleTypes = [
   "spaghetti",
   "penne",
@@ -41,19 +43,23 @@ export default function RecipeDetail({
   cookingTime,
   servings,
 }: Recipe) {
+  // Split recipe name for accent styling
   const words = name.split(" ");
   const accentIndex = 1;
 
+  // State hooks
   const [allRecipes, setAllRecipes] = useState<Recipe[]>([]);
   const [similarRecipes, setSimilarRecipes] = useState<Recipe[]>([]);
   const [noodleType, setNoodleType] = useState<string | null>(null);
 
+  // Fetch all recipes on mount
   useEffect(() => {
     fetch("/api/recipes")
       .then((res) => res.json())
       .then((data: Recipe[]) => setAllRecipes(data));
   }, []);
 
+  // Find noodle type in ingredients and filter similar recipes
   useEffect(() => {
     const currentNoodleType = noodleTypes.find((noodle) =>
       ingredients.some((ing) => ing.toLowerCase().includes(noodle))
@@ -74,8 +80,10 @@ export default function RecipeDetail({
 
   return (
     <div>
+      {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-center relative z-10">
+          {/* Recipe Title and Info */}
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -85,6 +93,7 @@ export default function RecipeDetail({
               Let&apos;s Cook
             </p>
             <h1 className="font-extrabold leading-tight text-yellow-800 text-4xl sm:text-5xl lg:text-6xl">
+              {/* Highlight accent word */}
               {words.map((word, i) => (
                 <span
                   key={i}
@@ -95,16 +104,19 @@ export default function RecipeDetail({
               ))}
             </h1>
             <div className="flex flex-wrap gap-8 mt-8 text-md lg:text-2xl z-10">
+              {/* Servings */}
               <span className="flex items-center gap-3">
                 <Users className="w-5 h-5 text-yellow-600" />
                 {servings} Servings
               </span>
+              {/* Cooking Time */}
               <span className="flex items-center gap-3">
                 <Clock className="w-5 h-5 text-yellow-600" />
                 {cookingTime}
               </span>
             </div>
           </motion.div>
+          {/* Recipe Image */}
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -120,8 +132,10 @@ export default function RecipeDetail({
         </div>
       </section>
 
+      {/* Ingredients & Instructions Section */}
       <section className="max-w-6xl mx-auto px-4 pb-20 z-10 relative">
         <div className="grid md:grid-cols-2 gap-12">
+          {/* Ingredients List */}
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -140,6 +154,7 @@ export default function RecipeDetail({
                 visible: { transition: { staggerChildren: 0.1 } },
               }}
             >
+              {/* Render each ingredient */}
               {ingredients.map((item, idx) => (
                 <motion.p
                   key={idx}
@@ -155,6 +170,7 @@ export default function RecipeDetail({
             </motion.div>
           </motion.div>
 
+          {/* Instructions List */}
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -165,6 +181,7 @@ export default function RecipeDetail({
               Instructions
             </h2>
             <ol className="space-y-8 relative">
+              {/* Render each instruction step */}
               {instructions.map((step, idx) => (
                 <motion.li
                   key={idx}
@@ -186,12 +203,21 @@ export default function RecipeDetail({
           </motion.div>
         </div>
       </section>
+      {/* Similar Recipes Section */}
       {similarRecipes.length > 0 && (
         <section className="max-w-8xl mx-auto px-4 pb-20 z-10 relative">
           <h2 className="text-2xl md:text-4xl font-bold mb-6 text-yellow-600">
-            Similar Dishes Using <span className="text-yellow-800">{noodleType?.replace(/\w\S*/g, (txt) => txt[0].toUpperCase() + txt.slice(1))}</span>
+            Similar Dishes Using{" "}
+            <span className="text-yellow-800">
+              {/* Capitalize noodle type */}
+              {noodleType?.replace(
+                /\w\S*/g,
+                (txt) => txt[0].toUpperCase() + txt.slice(1)
+              )}
+            </span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Render similar recipes */}
             {similarRecipes.map((recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
             ))}

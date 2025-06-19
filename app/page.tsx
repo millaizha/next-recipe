@@ -9,9 +9,10 @@ import {
   Chip,
 } from "@heroui/react";
 import { Search } from "lucide-react";
-import RecipeCard from "@/app/components/RecipeCard";
+import RecipeCard from "@/components/RecipeCard";
 import { motion } from "framer-motion";
 
+// Type for recipe objects
 interface Recipe {
   id: string;
   name: string;
@@ -22,6 +23,7 @@ interface Recipe {
   servings: number;
 }
 
+// Noodle types for filtering
 const noodleTypes = [
   "spaghetti",
   "penne",
@@ -40,12 +42,14 @@ const noodleTypes = [
 ];
 
 export default function HomePage() {
+  // State hooks
   const [loading, setLoading] = useState(true);
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedNoodles, setSelectedNoodles] = useState<string[]>([]);
   const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>([]);
 
+  // Fetch recipe data on mount
   useEffect(() => {
     fetch("/api/recipes")
       .then((res) => res.json())
@@ -56,6 +60,7 @@ export default function HomePage() {
       });
   }, []);
 
+  // Update filtered recipes on search or noodle filter change
   useEffect(() => {
     let filtered = [...recipes];
 
@@ -79,17 +84,24 @@ export default function HomePage() {
 
   return (
     <main className="relative min-h-screen">
+      {/* Background layer */}
       <div className="absolute inset-0 bg-yellow-50 z-0" />
+
+      {/* Main content */}
       <div className="relative z-10 px-12 py-10">
+
+        {/* Hero section */}
         <div className="relative flex flex-col items-center justify-center min-h-[50vh] pt-10">
+          {/* Decorative background shape */}
           <span
             aria-hidden
             className="fixed -top-24 md:-top-32 left-1/2 -translate-x-1/2
-                 w-[550px] h-[275px] md:w-[850px] md:h-[550px]
-                 bg-gradient-to-b from-yellow-200/80 to-yellow-50
-                 rounded-b-[450px]   /* bottom‑only curvature */
-                 -z-10"
+              w-[550px] h-[275px] md:w-[850px] md:h-[550px]
+              bg-gradient-to-b from-yellow-200/80 to-yellow-50
+              rounded-b-[450px] -z-10"
           />
+
+          {/* Title */}
           <motion.h1
             initial={{ y: -40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -98,12 +110,16 @@ export default function HomePage() {
           >
             🍜 The Noodle & Pasta Hub
           </motion.h1>
+
+          {/* Accent line under title */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             className="mt-2 h-1 w-32 origin-left bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-full shadow-sm"
           />
+
+          {/* Subtitle */}
           <motion.p
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -115,7 +131,11 @@ export default function HomePage() {
             Noodle and Pasta Recipes from Around the World
           </motion.p>
         </div>
+
+        {/* Filters (search and noodle type) */}
         <div className="sticky top-4 z-20 bg-white/90 backdrop-blur-md rounded-xl p-4 shadow-md mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          
+          {/* Search bar */}
           <div className="w-full items-start">
             <Autocomplete
               aria-label="Search Recipes"
@@ -135,7 +155,7 @@ export default function HomePage() {
               classNames={{
                 popoverContent: "bg-white text-yellow-800",
                 listbox: "bg-white",
-                base: "data-[slot='popover-content']:data-ignore-lenis",
+                base: "data-[slot='popover-content']:data-ignore-lenis", // prevent Lenis from hijacking dropdown scroll
               }}
             >
               {(item) => (
@@ -143,6 +163,8 @@ export default function HomePage() {
               )}
             </Autocomplete>
           </div>
+
+          {/* Noodle type filter */}
           <div className="w-full">
             <Select
               aria-label="Filter by Noodles"
@@ -158,7 +180,7 @@ export default function HomePage() {
               isMultiline
               variant="bordered"
               classNames={{
-                base: "data-[slot='popover-content']:data-ignore-lenis",
+                base: "data-[slot='popover-content']:data-ignore-lenis", // prevent Lenis from hijacking dropdown scroll
                 popoverContent: "bg-white text-yellow-800",
                 listbox: "bg-white",
               }}
@@ -188,6 +210,7 @@ export default function HomePage() {
               ))}
             </Select>
 
+            {/* Clear filter button */}
             {selectedNoodles.length > 0 && (
               <button
                 onClick={() => setSelectedNoodles([])}
@@ -198,6 +221,8 @@ export default function HomePage() {
             )}
           </div>
         </div>
+
+        {/* Recipe card grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {loading
             ? Array(6)
