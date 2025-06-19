@@ -38,7 +38,7 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
     const addWheelListeners = () => {
       ignoreSelectors.forEach((selector) => {
         document.querySelectorAll(selector).forEach((el) => {
-          el.addEventListener("wheel", stopPropagationIfScrollable as any, {
+          el.addEventListener("wheel", stopPropagationIfScrollable as EventListener, {
             passive: false,
           });
         });
@@ -58,7 +58,7 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
       observer.disconnect();
       ignoreSelectors.forEach((selector) => {
         document.querySelectorAll(selector).forEach((el) => {
-          el.removeEventListener("wheel", stopPropagationIfScrollable as any);
+          el.removeEventListener("wheel", stopPropagationIfScrollable as EventListener);
         });
       });
     };
